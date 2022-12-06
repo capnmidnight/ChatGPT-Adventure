@@ -16,7 +16,7 @@ explanation for what "combat" would mean. In the sessions that I've
 tried, it came up with "attack", "defend", and "retreat". Unfortunately,
 I've yet to win any battles with monsters found in the dungeon.
 
-# Ideas an issues
+# Ideas and issues
 
 A few ideas on how this could be extended:
 
