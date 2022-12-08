@@ -23,7 +23,7 @@ I've yet to win any battles with monsters found in the dungeon.
    whole new room. I've attempted to instruct GPT-3 to remember rooms,
    but so far it isn't working.
 
-# Ideas an issues
+# Ideas
 
 A few ideas on how this could be extended:
 
