@@ -1,20 +1,38 @@
-Me: This prompt is not part of the conversation. It is instructions on how to continue our conversation. After this prompt, reply with "confirmed". All subsequent prompts should follow these instructions. 
+# Adventure
 
-Imagine you are a mainframe system allowing for remote access from users to be able to run applications. One of the applications you have installed is called "Adventure". It is a text-based game that lets you explore a world through text descriptions of different "rooms" in that world. Rooms are connected to each other in different directions, like "east", "west", "up", "down", etc. I can navigate to these rooms by typing the name of the direction I want to go. When I navigate to a new room, you respond with a description of the room and a list of connections to other rooms, by direction. If I leave Room A to Room B by going in one direction (e.g. east), then I should be able to return to Room A from Room B by going in the opposite direction (e.g. west).
+This is an adventure game that I've managed to convince ChatGPT to play.
+You can move between rooms using cardinal directions, as well as pick
+up items and engage in combat with monsters.
 
-Some items in rooms are containers, like chests, bags, boxes, crates, and cabinets. I can't take these items, but I can issue the command "open <item>" to view inside them and see if there are other items inside.
+# Inferred commands
 
-Some connections between rooms are locked by specific types of key items. If I have the correct key in my inventory, I can issue the command "unlock <direction>" to open that connection and enable me to pass through. If I do not have the correct key, the unlock command fails.
+I asked GPT-3 to create its own set of commands for combat, with no
+explanation for what "combat" would mean. In the sessions that I've
+tried, it came up with "attack", "defend", and "retreat". Unfortunately,
+I've yet to win any battles with monsters found in the dungeon.
 
-In addition to navigating rooms, there are other commands. I can type "look" to repeat the room description. I can type "search" to look for hidden items in the room. I can type "take <item>" to pick up any items in the room, e.g. "take rope" will remove the rope from the room and put it in my inventory. I can type "examine <item>" to see more detail about an item in the room or in my inventory.
+# Limitations
 
-In addition to the commands I've described above, create other commands for eating and drinking items in my inventory. Create several commands to be able to perform combat with monsters that may roam the rooms.
+ - It doesn't appear that the game currently has a sense of health or
+   stamina.
+ - GPT-3 can't maintain enough context to be able to return to rooms you
+   previously left. For example, if you leave Room A by traveling to the
+   east into Room B, sometimes Room B doesn't have a "west" exit to return
+   to room Room A. Even when it does have the reverse connection, following
+   it does not return you to the same room. Every navigation creates a
+   whole new room. I've attempted to instruct GPT-3 to remember rooms,
+   but so far it isn't working.
 
-Finally, I can also type, "help" to see a list of commands that are available. 
-5 / 5
-=======================
-ChatGPT: Confirmed.
-=======================
+# Ideas an issues
+
+A few ideas on how this could be extended:
+
+ - Perhaps a sentence describing a particular theme for the dungeon could
+   be added, to make different genres of prose.
+ 
+# Log
+
+ ```
 Me: help
 =======================
 ChatGPT: The available commands are:
@@ -88,3 +106,4 @@ ChatGPT: You successfully retreat from the combat and make your way back to the 
 Me: west
 =======================
 ChatGPT: You move towards the west opening and find yourself in a large chamber. The ceiling is high and the walls are carved with intricate patterns. You see several exits in different directions: north, east, and south. There is a cabinet in the corner of the room, and a faint glow coming from the south.
+```
